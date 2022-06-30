@@ -1,0 +1,8 @@
+@mixin bold {
+    font-weight: bold;
+};
+
+@mixin initialPos {
+    transition: transform 0.5s ease 0s;
+	color: $white;
+};
