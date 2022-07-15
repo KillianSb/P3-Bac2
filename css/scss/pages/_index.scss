@@ -65,14 +65,39 @@
         margin-bottom: 50px;
     }
     .liste-box {
-        .box1, .box2, .box3 {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .box {
             font-family: 'Roboto', sans-serif;
-            font-size: 20px;
+            font-size: 35px;
             border-radius: 30px;
             display: block;
             box-shadow: 0px 10px 30px rgb(0 0 0 / 37%);
             padding: 30px 40px;
-            margin-bottom: 40px;
+            margin:0 auto 40px;
+            position: relative;
+            width: 85%;
+            &:hover{
+                animation: box-color 6s ease-in-out 0s forwards;
+                p {
+                    color: #7400ff;
+                }
+                i {
+                    color: #7400ff;
+                }
+            }
+            @media screen and (min-width: $desktop) {
+                width: 25%;
+                margin: 40px 0;
+                font-size: 25px;
+            }
+            @media screen and (max-width: 1308px) {
+                font-size: 18px;
+            }
+            @media screen and (max-width: 990px) {
+                font-size: 25px;
+            }
             .number {
                 display: block;
                 position: absolute;
@@ -84,12 +109,37 @@
                 font-size: 25px;
                 width: 30px;
                 height: 30px;
+                @media screen and (max-device-width: 2600px) {
+                    padding: 9px;
+                    left: -15px;
+                    top: 45px;
+                }
+                @media screen and (max-width: 1308px) {
+                    padding: 5px;
+                    top: 39px;
+                }
+                @media screen and (max-device-width: 990px) {
+                    padding: 20px;
+                    left: -24px;
+                }
             }
             i {
                 display: inline-block;
                 margin-right: 94px;
                 margin-left: 60px;
-                color: $violet;
+                color: black;
+                @media screen and (max-width: 1842px) {
+                    margin-right: 10px;
+                    margin-left: 10px;
+                }
+                @media screen and (max-width: 990px) {
+                    margin-right: 94px;
+                    margin-left: 60px;
+                }
+            }
+            p {
+                display: inline-block;
+                color: black;
             }
         }
     }
@@ -104,6 +154,12 @@
         margin-top: 25px;
         margin-bottom: 160px;
         justify-items: center;
+        @media screen and (max-device-width: 2600px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (max-device-width: 1780px) { 
+            grid-template-columns: 1fr;
+        }
         .restaurant1, .restaurant2, .restaurant3, .restaurant4 {
             display: block;
             box-shadow: 0px 30px 40px rgb(1 1 1 / 15%);

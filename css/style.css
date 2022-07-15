@@ -3,7 +3,7 @@
 @-webkit-keyframes transition2 {
   0% {
     opacity: 0;
-    transform: translate3d(-70px, 0, 0);
+    transform: translate3d(0, 70px, 0);
   }
   100% {
     opacity: 1;
@@ -13,7 +13,7 @@
 @keyframes transition2 {
   0% {
     opacity: 0;
-    transform: translate3d(-70px, 0, 0);
+    transform: translate3d(0, 70px, 0);
   }
   100% {
     opacity: 1;
@@ -40,20 +40,20 @@
           animation: transition2 3s ease-in-out 1.4s forwards;
   opacity: 0;
 }
-.liste .entrees:hover .circle, .liste .desserts:hover .circle, .liste .plats:hover .circle {
-  /* on change la position du cercle à 0 pour qu'il soit dans le block avec une transition pour que ce soit smooth */
-  right: 0;
-  transition: 0.5s ease 0s;
-}
-.liste .entrees:hover .circle i, .liste .desserts:hover .circle i, .liste .plats:hover .circle i {
-  /* animation de rotation sur le hover de block */
-  transition-delay: 0.2s;
-  transform: rotate(-360deg);
-}
 .liste .entrees:hover .box-contenu, .liste .desserts:hover .box-contenu, .liste .plats:hover .box-contenu {
   /* on change la width du block avec les infos sur le hover */
   transition: 0.5s ease 0s;
-  width: 85%;
+  width: 100%;
+}
+.liste .entrees:hover .info .circle, .liste .desserts:hover .info .circle, .liste .plats:hover .info .circle {
+  /* on change la position du cercle à 0 pour qu'il soit dans le block avec une transition pour que ce soit smooth */
+  right: 0%;
+  transition: 0.5s ease 0s;
+}
+.liste .entrees:hover .info .circle i, .liste .desserts:hover .info .circle i, .liste .plats:hover .info .circle i {
+  /* animation de rotation sur le hover de block */
+  transition-delay: 0.2s;
+  transform: rotate(-360deg);
 }
 .liste .entrees .circle i, .liste .desserts .circle i, .liste .plats .circle i {
   /* pour revenir à la position initial quand on est plus sur le hover */
@@ -67,15 +67,15 @@
     filter: blur(50px);
     opacity: 0;
   }
-  20% {
+  30% {
     filter: blur(30px);
     opacity: 1;
   }
-  50% {
+  60% {
     filter: blur(10px);
     opacity: 1;
   }
-  80% {
+  90% {
     filter: blur(5px);
     opacity: 1;
   }
@@ -89,15 +89,15 @@
     filter: blur(50px);
     opacity: 0;
   }
-  20% {
+  30% {
     filter: blur(30px);
     opacity: 1;
   }
-  50% {
+  60% {
     filter: blur(10px);
     opacity: 1;
   }
-  80% {
+  90% {
     filter: blur(5px);
     opacity: 1;
   }
@@ -108,8 +108,8 @@
 }
 .loding-body {
   opacity: 0;
-  -webkit-animation: loading 5s ease-in-out 0s forwards;
-          animation: loading 5s ease-in-out 0s forwards;
+  -webkit-animation: loading 3s ease-in-out 0s forwards;
+          animation: loading 3s ease-in-out 0s forwards;
 }
 
 /* Animation ball */
@@ -144,8 +144,8 @@
   }
 }
 .loading {
-  -webkit-animation: spinner-loading 7s ease-in-out 0s forwards;
-          animation: spinner-loading 7s ease-in-out 0s forwards;
+  -webkit-animation: spinner-loading 3s ease-in-out 0s forwards;
+          animation: spinner-loading 3s ease-in-out 0s forwards;
   position: fixed;
   top: 0;
   right: 0;
@@ -295,6 +295,42 @@
   }
 }
 /* Fin animation Coeur fondu */
+/* Animation fond couleur page index */
+@-webkit-keyframes box-color {
+  0% {
+    background: linear-gradient(to bottom right, #FF79DA, #945cd8);
+  }
+  20% {
+    background: linear-gradient(to bottom right, #FF79DA, #8b48dd);
+  }
+  40% {
+    background: linear-gradient(to bottom right, #FF79DA, #8b47df);
+  }
+  60% {
+    background: linear-gradient(to bottom right, #FF79DA, #8037da);
+  }
+  100% {
+    background: linear-gradient(to bottom right, #FF79DA, #7d32da);
+  }
+}
+@keyframes box-color {
+  0% {
+    background: linear-gradient(to bottom right, #FF79DA, #945cd8);
+  }
+  20% {
+    background: linear-gradient(to bottom right, #FF79DA, #8b48dd);
+  }
+  40% {
+    background: linear-gradient(to bottom right, #FF79DA, #8b47df);
+  }
+  60% {
+    background: linear-gradient(to bottom right, #FF79DA, #8037da);
+  }
+  100% {
+    background: linear-gradient(to bottom right, #FF79DA, #7d32da);
+  }
+}
+/* Fin animation fond couleur page index */
 /* Fin ANIMATION */
 body {
   margin: 0px;
@@ -433,16 +469,50 @@ footer .texte-seul:hover {
   font-weight: bold;
   margin-bottom: 50px;
 }
-.fonctionnement .liste-box .box1, .fonctionnement .liste-box .box2, .fonctionnement .liste-box .box3 {
+.fonctionnement .liste-box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.fonctionnement .liste-box .box {
   font-family: "Roboto", sans-serif;
-  font-size: 20px;
+  font-size: 35px;
   border-radius: 30px;
   display: block;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.37);
   padding: 30px 40px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
+  position: relative;
+  width: 85%;
 }
-.fonctionnement .liste-box .box1 .number, .fonctionnement .liste-box .box2 .number, .fonctionnement .liste-box .box3 .number {
+.fonctionnement .liste-box .box:hover {
+  -webkit-animation: box-color 6s ease-in-out 0s forwards;
+          animation: box-color 6s ease-in-out 0s forwards;
+}
+.fonctionnement .liste-box .box:hover p {
+  color: #7400ff;
+}
+.fonctionnement .liste-box .box:hover i {
+  color: #7400ff;
+}
+@media screen and (min-width: 992px) {
+  .fonctionnement .liste-box .box {
+    width: 25%;
+    margin: 40px 0;
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 1308px) {
+  .fonctionnement .liste-box .box {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .fonctionnement .liste-box .box {
+    font-size: 25px;
+  }
+}
+.fonctionnement .liste-box .box .number {
   display: block;
   position: absolute;
   border-radius: 100%;
@@ -454,11 +524,46 @@ footer .texte-seul:hover {
   width: 30px;
   height: 30px;
 }
-.fonctionnement .liste-box .box1 i, .fonctionnement .liste-box .box2 i, .fonctionnement .liste-box .box3 i {
+@media screen and (max-device-width: 2600px) {
+  .fonctionnement .liste-box .box .number {
+    padding: 9px;
+    left: -15px;
+    top: 45px;
+  }
+}
+@media screen and (max-width: 1308px) {
+  .fonctionnement .liste-box .box .number {
+    padding: 5px;
+    top: 39px;
+  }
+}
+@media screen and (max-device-width: 990px) {
+  .fonctionnement .liste-box .box .number {
+    padding: 20px;
+    left: -24px;
+  }
+}
+.fonctionnement .liste-box .box i {
   display: inline-block;
   margin-right: 94px;
   margin-left: 60px;
-  color: #9356DC;
+  color: black;
+}
+@media screen and (max-width: 1842px) {
+  .fonctionnement .liste-box .box i {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .fonctionnement .liste-box .box i {
+    margin-right: 94px;
+    margin-left: 60px;
+  }
+}
+.fonctionnement .liste-box .box p {
+  display: inline-block;
+  color: black;
 }
 
 .restaurants {
@@ -471,6 +576,16 @@ footer .texte-seul:hover {
   margin-top: 25px;
   margin-bottom: 160px;
   justify-items: center;
+}
+@media screen and (max-device-width: 2600px) {
+  .restaurants .box-restaurant {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-device-width: 1780px) {
+  .restaurants .box-restaurant {
+    grid-template-columns: 1fr;
+  }
 }
 .restaurants .box-restaurant .restaurant1, .restaurants .box-restaurant .restaurant2, .restaurants .box-restaurant .restaurant3, .restaurants .box-restaurant .restaurant4 {
   display: block;
@@ -627,127 +742,55 @@ footer .texte-seul:hover {
   border-radius: 30px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.37);
   margin: 20px;
-  padding: 17px;
   margin-bottom: 20px;
   overflow: hidden;
   position: relative;
-  width: 92%;
+  width: 98%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.block-carte-menu .liste .entrees .box-contenu .info, .block-carte-menu .liste .plats .box-contenu .info, .block-carte-menu .liste .desserts .box-contenu .info {
+.block-carte-menu .liste .entrees:hover .circle, .block-carte-menu .liste .plats:hover .circle, .block-carte-menu .liste .desserts:hover .circle {
+  width: 30% !important;
+}
+.block-carte-menu .liste .entrees .box-contenu, .block-carte-menu .liste .plats .box-contenu, .block-carte-menu .liste .desserts .box-contenu {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding: 17px;
+  width: 40%;
 }
-.block-carte-menu .liste .entrees .box-contenu .info .titre, .block-carte-menu .liste .plats .box-contenu .info .titre, .block-carte-menu .liste .desserts .box-contenu .info .titre {
+.block-carte-menu .liste .entrees .box-contenu .titre, .block-carte-menu .liste .plats .box-contenu .titre, .block-carte-menu .liste .desserts .box-contenu .titre {
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 5px;
   font-weight: bold;
 }
-.block-carte-menu .liste .entrees .box-contenu .info .sous-titre, .block-carte-menu .liste .entrees .box-contenu .info .prix, .block-carte-menu .liste .plats .box-contenu .info .sous-titre, .block-carte-menu .liste .plats .box-contenu .info .prix, .block-carte-menu .liste .desserts .box-contenu .info .sous-titre, .block-carte-menu .liste .desserts .box-contenu .info .prix {
+.block-carte-menu .liste .entrees .box-contenu .sous-titre, .block-carte-menu .liste .entrees .box-contenu .prix, .block-carte-menu .liste .plats .box-contenu .sous-titre, .block-carte-menu .liste .plats .box-contenu .prix, .block-carte-menu .liste .desserts .box-contenu .sous-titre, .block-carte-menu .liste .desserts .box-contenu .prix {
   font-size: 28px;
 }
-.block-carte-menu .liste .entrees .box-contenu .prix, .block-carte-menu .liste .plats .box-contenu .prix, .block-carte-menu .liste .desserts .box-contenu .prix {
-  font-weight: bold;
+.block-carte-menu .liste .entrees .info, .block-carte-menu .liste .plats .info, .block-carte-menu .liste .desserts .info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40%;
 }
-.block-carte-menu .liste .entrees .circle, .block-carte-menu .liste .plats .circle, .block-carte-menu .liste .desserts .circle {
+.block-carte-menu .liste .entrees .info .prix, .block-carte-menu .liste .plats .info .prix, .block-carte-menu .liste .desserts .info .prix {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  position: relative;
+}
+.block-carte-menu .liste .entrees .info .circle, .block-carte-menu .liste .plats .info .circle, .block-carte-menu .liste .desserts .info .circle {
   /* position absolute à -60px (la taille du block) pour qu'il soit en dehors du block */
-  transition: 0.5s ease 0s;
-  position: absolute;
-  right: -110px;
   top: 0;
   background-color: #99E2D0;
   height: 100%;
-  width: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: xx-large;
-}
-
-/* Responsive */
-@media screen and (max-device-width: 2600px) {
-  .liste-box {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  .box1 i, .box2 i, .box3 i {
-    margin-right: 41px;
-    margin-left: 42px;
-  }
-
-  .img-menu-haut {
-    height: 725px;
-    width: 2600px;
-  }
-
-  .number {
-    padding: 9px;
-    left: -14px;
-    top: 17px;
-  }
-
-  .box1, .box2, .box3 {
-    padding: 50px 30px;
-    position: relative;
-  }
-
-  .box-restaurant {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media screen and (max-device-width: 1780px) {
-  .img-menu-haut {
-    width: 1780px;
-  }
-
-  .box-restaurant {
-    grid-template-columns: 1fr;
-  }
-
-  .box1 i, .box2 i, .box3 i {
-    margin-right: 30px;
-    margin-left: 25px;
-  }
-
-  .box1, .box2, .box3 {
-    padding: 50px 30px;
-  }
-}
-@media screen and (max-device-width: 1070px) {
-  .img-menu-haut {
-    height: 571px;
-    width: 1095px;
-  }
-
-  .menu-haut i {
-    font-size: 16px;
-  }
-
-  .liste-box {
-    display: block;
-  }
-}
-@media screen and (max-device-width: 700px) {
-  .number {
-    padding: 20px;
-    left: -24px;
-  }
-
-  .menu-haut i {
-    font-size: 13px;
-  }
-}
-@media screen and (max-device-width: 380px) {
-  .menu-haut-img {
-    display: block;
-    position: absolute;
-  }
-
-  .img-menu-haut {
-    height: 579px;
-    width: 980px;
-  }
+  width: 0;
 }/*# sourceMappingURL=style.css.map */

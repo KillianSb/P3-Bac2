@@ -1,7 +1,7 @@
 /* Apparition menu */
 
 @keyframes transition2 {
-    0%   { opacity: 0;transform: translate3d(-70px, 0, 0); }
+    0%   { opacity: 0;transform: translate3d(0, 70px, 0);}
     100% { opacity: 1;transform: translate3d(0, 0, 0); }
 }
 
@@ -22,20 +22,22 @@
     /* Icon validation apparition */
     .entrees, .desserts, .plats {
         &:hover {
-            .circle {
-                /* on change la position du cercle à 0 pour qu'il soit dans le block avec une transition pour que ce soit smooth */
-                right: 0;
-                transition: 0.5s ease 0s;
-                i {
-                    /* animation de rotation sur le hover de block */
-                    transition-delay: 0.2s;
-                    transform: rotate(-360deg);
-                }
-            }
             .box-contenu {
                 /* on change la width du block avec les infos sur le hover */
                 transition: 0.5s ease 0s;
-                width: 85%;
+                width: 100%;
+            }
+            .info {
+                .circle {
+                    /* on change la position du cercle à 0 pour qu'il soit dans le block avec une transition pour que ce soit smooth */
+                    right: 0%;
+                    transition: 0.5s ease 0s;
+                    i {
+                        /* animation de rotation sur le hover de block */
+                        transition-delay: 0.2s;
+                        transform: rotate(-360deg);
+                    }
+                }
             }
         }
         .circle {
@@ -52,15 +54,15 @@
 
 @keyframes loading {
     0%   { filter: blur(50px);opacity:0; }
-    20%   { filter: blur(30px);opacity:1; }
-    50%   { filter: blur(10px);opacity:1; }
-    80%   { filter: blur(5px);opacity:1; }
+    30%   { filter: blur(30px);opacity:1; }
+    60%   { filter: blur(10px);opacity:1; }
+    90%   { filter: blur(5px);opacity:1; }
     100% { filter: blur(0px);opacity:1; }
 }
 
 .loding-body {
     opacity: 0;
-    animation: loading 5s ease-in-out 0s forwards;
+    animation: loading 3s ease-in-out 0s forwards;
 }
 
 /* Animation ball */
@@ -73,7 +75,7 @@
 }
 
 .loading {
-    animation: spinner-loading 7s ease-in-out 0s forwards;
+    animation: spinner-loading 3s ease-in-out 0s forwards;
     position:fixed;
     top:0;
     right:0;
@@ -186,5 +188,17 @@
 }
 
 /* Fin animation Coeur fondu */
+
+/* Animation fond couleur page index */
+
+@keyframes box-color {
+    0%   { background: linear-gradient(to bottom right, #FF79DA, #945cd8); }
+    20% { background: linear-gradient(to bottom right, #FF79DA, #8b48dd); }
+    40% { background: linear-gradient(to bottom right, #FF79DA, #8b47df); }
+    60% { background: linear-gradient(to bottom right, #FF79DA, #8037da); }
+    100% { background: linear-gradient(to bottom right, #FF79DA, #7d32da); }
+}
+
+/* Fin animation fond couleur page index */
 
 /* Fin ANIMATION */

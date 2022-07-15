@@ -63,44 +63,64 @@
             border-radius: 30px;
             box-shadow: 0px 10px 30px rgb(0 0 0 / 37%);
             margin: 20px;
-            padding: 17px;
             margin-bottom: 20px;
             overflow: hidden;
             position: relative;
-            width: 92%;
+            width: 98%;
             display: flex;
-            .box-contenu {
-                .info {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content:space-around;
-                    .titre {
-                        font-size: 30px;
-                        font-weight: 600;
-                        margin-bottom: 5px;
-                        @include bold;
-                    }
-                    .sous-titre, .prix {
-                        font-size: 28px;
-                    }
-                }
-                .prix {
-                    @include bold;
+            flex-wrap: wrap;
+            justify-content: space-between;
+             &:hover{
+                .circle{
+                    width: 30% !important;
                 }
             }
-            .circle {
-                /* position absolute à -60px (la taille du block) pour qu'il soit en dehors du block */
-                transition: 0.5s ease 0s;
-                position: absolute;
-                right: -110px;
-                top: 0;
-                background-color: $green;
-                height: 100%;
-                width: 110px;
+            .box-contenu {
                 display: flex;
-                justify-content: center;
+                flex-direction: column;
+                justify-content:space-around;
+                padding: 17px;
+                width: 40%;
+                
+                .titre {
+                    font-size: 30px;
+                    font-weight: 600;
+                    margin-bottom: 5px;
+                    @include bold;
+                }
+                .sous-titre, .prix {
+                    font-size: 28px;
+                }
+            }
+            .info {
+                display: flex;
+                justify-content:flex-end;
                 align-items: center;
-                font-size: xx-large;
+                width: 40%;
+                .prix {
+                    @include bold;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    // float: right;
+                    width:20%;
+                    position: relative;
+                }
+                .circle {
+                    /* position absolute à -60px (la taille du block) pour qu'il soit en dehors du block */
+                    // transition: 0.5s ease 0s;
+                    // position: absolute;
+                    // right: -50%;
+                    top: 0;
+                    background-color: $green;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: xx-large;
+                    width: 0;
+                   
+                }
             }
         }
     }
