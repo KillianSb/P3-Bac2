@@ -743,37 +743,37 @@ footer .texte-seul:hover {
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.37);
   margin: 20px;
   margin-bottom: 20px;
-  overflow: hidden;
   position: relative;
-  width: 98%;
+  width: 99%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 .block-carte-menu .liste .entrees:hover .circle, .block-carte-menu .liste .plats:hover .circle, .block-carte-menu .liste .desserts:hover .circle {
-  width: 30% !important;
+  width: 300px !important;
+  border-radius: 0px 30px 30px 0px;
 }
 .block-carte-menu .liste .entrees .box-contenu, .block-carte-menu .liste .plats .box-contenu, .block-carte-menu .liste .desserts .box-contenu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   padding: 17px;
-  width: 50%;
+  width: 100%;
+  min-width: 0;
 }
 .block-carte-menu .liste .entrees .box-contenu .titre, .block-carte-menu .liste .plats .box-contenu .titre, .block-carte-menu .liste .desserts .box-contenu .titre {
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   font-weight: bold;
 }
 .block-carte-menu .liste .entrees .box-contenu .sous-titre, .block-carte-menu .liste .entrees .box-contenu .prix, .block-carte-menu .liste .plats .box-contenu .sous-titre, .block-carte-menu .liste .plats .box-contenu .prix, .block-carte-menu .liste .desserts .box-contenu .sous-titre, .block-carte-menu .liste .desserts .box-contenu .prix {
   font-size: 28px;
+  text-overflow: ellipsis;
 }
 .block-carte-menu .liste .entrees .info, .block-carte-menu .liste .plats .info, .block-carte-menu .liste .desserts .info {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  width: 45%;
+  overflow: hidden;
 }
 .block-carte-menu .liste .entrees .info .prix, .block-carte-menu .liste .plats .info .prix, .block-carte-menu .liste .desserts .info .prix {
   font-weight: bold;
@@ -782,6 +782,7 @@ footer .texte-seul:hover {
   align-items: center;
   width: 25%;
   position: relative;
+  margin: 25px;
 }
 .block-carte-menu .liste .entrees .info .circle, .block-carte-menu .liste .plats .info .circle, .block-carte-menu .liste .desserts .info .circle {
   /* position absolute à -60px (la taille du block) pour qu'il soit en dehors du block */
