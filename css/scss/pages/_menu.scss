@@ -32,7 +32,6 @@
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: $black;
         i:hover {
-            /* color: linear-gradient(to bottom right, #FF79DA, #9356DC); */
             -webkit-text-stroke-width: 2px;
             -webkit-text-stroke-color: $black;
             animation: coeur 6s ease-in-out 0s forwards;
@@ -64,22 +63,18 @@
             box-shadow: 0px 10px 30px rgb(0 0 0 / 37%);
             margin: 20px;
             margin-bottom: 20px;
-            // overflow: hidden;
             position: relative;
-            width: 99%;
             display: flex;
-            // flex-wrap: wrap;
             justify-content: space-between;
              &:hover{
                 .circle{
                     width: 300px !important;
-                    border-radius: 0px 30px 30px 0px;
+					@media screen and (max-width: $desktop) {
+						width: 700px !important;
+					}
                 }
             }
             .box-contenu {
-                // display: flex;
-                // flex-direction: column;
-                // justify-content:space-around;
                 padding: 17px;
                 width: 100%;
                 min-width: 0;
@@ -95,14 +90,14 @@
                 .sous-titre, .prix {
                     font-size: 28px;
                     text-overflow: ellipsis;
+					white-space: nowrap;
+                    overflow: hidden;
                 }
             }
             .info {
                 display: flex;
                 justify-content:flex-end;
                 overflow: hidden;
-                // align-items: center;
-                // width: 45%;
                 .prix {
                     @include bold;
                     display: flex;
@@ -111,12 +106,11 @@
                     width:25%;
                     position: relative;
                     margin: 25px;
+					@media screen and (max-width: $desktop) {
+						margin-left: 50px !important;
+					}
                 }
                 .circle {
-                    /* position absolute à -60px (la taille du block) pour qu'il soit en dehors du block */
-                    // transition: 0.5s ease 0s;
-                    // position: absolute;
-                    // right: -50%;
                     top: 0;
                     background-color: $green;
                     height: 100%;
@@ -124,6 +118,7 @@
                     justify-content: center;
                     align-items: center;
                     font-size: xx-large;
+					border-radius: 0px 30px 30px 0px;
                     width: 0;
                    
                 }

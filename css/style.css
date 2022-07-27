@@ -710,7 +710,6 @@ footer .texte-seul:hover {
   -webkit-text-stroke-color: rgb(0, 0, 0);
 }
 .titre-page-menu .logo-heart-menu i:hover {
-  /* color: linear-gradient(to bottom right, #FF79DA, #9356DC); */
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgb(0, 0, 0);
   -webkit-animation: coeur 6s ease-in-out 0s forwards;
@@ -744,13 +743,16 @@ footer .texte-seul:hover {
   margin: 20px;
   margin-bottom: 20px;
   position: relative;
-  width: 99%;
   display: flex;
   justify-content: space-between;
 }
 .block-carte-menu .liste .entrees:hover .circle, .block-carte-menu .liste .plats:hover .circle, .block-carte-menu .liste .desserts:hover .circle {
   width: 300px !important;
-  border-radius: 0px 30px 30px 0px;
+}
+@media screen and (max-width: 992px) {
+  .block-carte-menu .liste .entrees:hover .circle, .block-carte-menu .liste .plats:hover .circle, .block-carte-menu .liste .desserts:hover .circle {
+    width: 700px !important;
+  }
 }
 .block-carte-menu .liste .entrees .box-contenu, .block-carte-menu .liste .plats .box-contenu, .block-carte-menu .liste .desserts .box-contenu {
   padding: 17px;
@@ -769,6 +771,8 @@ footer .texte-seul:hover {
 .block-carte-menu .liste .entrees .box-contenu .sous-titre, .block-carte-menu .liste .entrees .box-contenu .prix, .block-carte-menu .liste .plats .box-contenu .sous-titre, .block-carte-menu .liste .plats .box-contenu .prix, .block-carte-menu .liste .desserts .box-contenu .sous-titre, .block-carte-menu .liste .desserts .box-contenu .prix {
   font-size: 28px;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .block-carte-menu .liste .entrees .info, .block-carte-menu .liste .plats .info, .block-carte-menu .liste .desserts .info {
   display: flex;
@@ -784,8 +788,12 @@ footer .texte-seul:hover {
   position: relative;
   margin: 25px;
 }
+@media screen and (max-width: 992px) {
+  .block-carte-menu .liste .entrees .info .prix, .block-carte-menu .liste .plats .info .prix, .block-carte-menu .liste .desserts .info .prix {
+    margin-left: 50px !important;
+  }
+}
 .block-carte-menu .liste .entrees .info .circle, .block-carte-menu .liste .plats .info .circle, .block-carte-menu .liste .desserts .info .circle {
-  /* position absolute à -60px (la taille du block) pour qu'il soit en dehors du block */
   top: 0;
   background-color: #99E2D0;
   height: 100%;
@@ -793,5 +801,6 @@ footer .texte-seul:hover {
   justify-content: center;
   align-items: center;
   font-size: xx-large;
+  border-radius: 0px 30px 30px 0px;
   width: 0;
 }/*# sourceMappingURL=style.css.map */
