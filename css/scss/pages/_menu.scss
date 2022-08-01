@@ -64,6 +64,9 @@
             margin: 20px;
             margin-bottom: 20px;
             position: relative;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
             display: flex;
             justify-content: space-between;
              &:hover{
