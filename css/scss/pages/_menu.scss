@@ -67,7 +67,7 @@
             display: flex;
             justify-content: space-between;
              &:hover{
-                .circle{
+                .circle {
                     width: 300px !important;
 					@media screen and (max-width: $desktop) {
 						width: 700px !important;
